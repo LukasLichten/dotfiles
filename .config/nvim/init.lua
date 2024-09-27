@@ -44,6 +44,13 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Used for my laptop to enable extra bindings for use on german keyboard layout
+if os.getenv('NVIM_ISO_GERMAN') then
+  vim.g.isolaptop = true
+else
+  vim.g.isolaptop = false
+end
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -112,7 +119,18 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim', opts = {
+      -- document existing key chains
+      spec = {
+        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
+        { '<leader>d', group = '[D]ocument' },
+        { '<leader>r', group = '[R]ename' },
+        { '<leader>s', group = '[S]earch' },
+        { '<leader>w', group = '[W]orkspace' },
+        { '<leader>g', group = '[G]it', mode = { 'n', 'v' } },
+        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } }
+      }
+  }},
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -373,7 +391,9 @@ end
 vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>ß', require('telescope.builtin').oldfiles, { desc = '[ß] Find recently opened files (ISO)' })
+if vim.g.isolaptop then
+  vim.keymap.set('n', '<leader>ß', require('telescope.builtin').oldfiles, { desc = '[ß] Find recently opened files (ISO)' })
+end
 vim.keymap.set('n', '<leader>=', require('telescope.builtin').oldfiles, { desc = '[=] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 local function fuzzy_search()
@@ -383,7 +403,9 @@ local function fuzzy_search()
     previewer = true,
   })
 end
-vim.keymap.set('n', '<leader>#', fuzzy_search, { desc = '[#] Fuzzily search in current buffer (ISO)' })
+if vim.g.isolaptop then
+  vim.keymap.set('n', '<leader>#', fuzzy_search, { desc = '[#] Fuzzily search in current buffer (ISO)' })
+end
 vim.keymap.set('n', '<leader>/', fuzzy_search, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
@@ -515,16 +537,6 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
--- document existing key chains
-require('which-key').register {
-  ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-  ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
-  ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-  ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-  ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-}
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
