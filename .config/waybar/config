@@ -1,0 +1,156 @@
+// -*- mode: json -*-
+
+{
+	"layer": "bottom",
+	"position": "top",
+
+	"modules-left": [
+		"hyprland/workspaces",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"memory",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"cpu",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"hyprland/language",
+		"custom/right-arrow-dark",
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"backlight",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery#bat0",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"tray"
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}",
+		"show-special": true,
+		"special-visible-only": true
+	},
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "En",
+		"format-de": "De"
+	},
+
+
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"interval": 1,
+		"format": "{:%H:%M:%S}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%d %b}",
+		"tooltip": false
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"on-click-right": "hyprctl dispatch exec pavucontrol"
+	},
+	"backlight": {
+		// "device": "acpi_video1",
+		"format": "{icon} {percent}%",
+		"format-icons": ["", ""]
+	},
+	"memory": {
+		"interval": 3,
+		"format": "RAM {}%"
+	},
+	"cpu": {
+		"interval": 3,
+		"format": "CPU {usage:2}%"
+	},
+	"battery": {
+		"interval": 45,
+		"bat": "BAT0",
+		"states": {
+			"stable": 100,
+			"good": 94,
+			"warning": 35,
+			"critical": 15,
+			"empty": 5
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": " {capacity}%", 
+		"format-plugged": "{capacity}%",
+		"format-plugged-stable": " {capacity}%",
+		"format-full": " {capacity}%",
+		"format-empty": "EMPTY",
+		"format-icons": ["", "", "", "", ""]
+		},
+	"battery#bat0": {
+		"interval": 45,
+		"bat": "BAT1",
+		"states": {
+			"good": 90,
+			"warning": 35,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-not-charging": "{capacity}%",
+		"format-charging": " {capacity}%", 
+		"format-plugged": "{capacity}%",
+		"format-full": "{capacity}%",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"tray": {
+		"icon-size": 22
+	}
+}
