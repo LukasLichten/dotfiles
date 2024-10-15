@@ -1,0 +1,12 @@
+Copyright belongs to the respective parties/creators.  
+Images in this folder are NOT licensed under any opensource licenses (if not declared otherwise).  
+  
+doki.png & doki.jpg:
+@kaxukin
+https://x.com/kaxukin/status/1791377821971202557
+
+hyprland-chan.png:
+Ecatherina Farias
+https://kathcfarias.artstation.com/projects/PXR59n
+Also published under the hyprland project (BSD-3):  
+https://github.com/hyprwm/Hyprland/blob/main/assets/install/wall2.png
