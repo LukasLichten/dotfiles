@@ -132,7 +132,7 @@
 		"format-plugged": "{capacity}%",
 		"format-plugged-stable": " {capacity}%",
 		"format-full": " {capacity}%",
-		"format-empty": "EMPTY",
+		"format-not-charging-empty": "EMPTY",
 		"format-icons": ["", "", "", "", ""]
 		},
 	"battery#bat0": {

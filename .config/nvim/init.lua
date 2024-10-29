@@ -561,7 +561,9 @@ local servers = {
     }
   },
   -- ltex = {},
-  texlab = {},
+  texlab = {
+     latexFormatter = "texlab"
+  },
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
   clangd = {},
