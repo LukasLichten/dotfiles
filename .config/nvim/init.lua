@@ -567,6 +567,7 @@ local servers = {
   clangd = {},
   yamlls = {},
   cssls = {},
+  marksman = {},
 
   lua_ls = {
     Lua = {
