@@ -119,7 +119,8 @@
 	},
 	"battery": {
 		"interval": 45,
-		"bat": "BAT0",
+		// External Battery, 01AV423
+		"bat": "BAT1", 
 		"states": {
 			"stable": 100,
 			"good": 94,
@@ -137,7 +138,8 @@
 		},
 	"battery#bat0": {
 		"interval": 45,
-		"bat": "BAT1",
+		// Internal Battery, 01AV489
+		"bat": "BAT0",
 		"states": {
 			"good": 90,
 			"warning": 35,
