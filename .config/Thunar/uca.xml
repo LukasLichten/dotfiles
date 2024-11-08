@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<submenu></submenu>
+	<unique-id>1718096576602506-1</unique-id>
+	<command>hyprctl dispatch exec &apos;kitty -d &quot;%f&quot;&apos;</command>
+	<description></description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>filelight</icon>
+	<name>Explore in Filelight</name>
+	<submenu></submenu>
+	<unique-id>1718227229232477-1</unique-id>
+	<command>filelight %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>folder</icon>
+	<name>Open In New Window</name>
+	<submenu></submenu>
+	<unique-id>1718887600628691-1</unique-id>
+	<command>hyprctl dispatch exec thunar %f</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>
