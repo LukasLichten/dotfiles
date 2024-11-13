@@ -123,10 +123,10 @@
 		"bat": "BAT1", 
 		"states": {
 			"stable": 100,
-			"good": 94,
+			"good": 90,
 			"warning": 35,
 			"critical": 15,
-			"empty": 5
+			"empty": 6
 		},
 		"format": "{icon} {capacity}%",
 		"format-not-charging": "{capacity}%",
@@ -142,10 +142,11 @@
 		// Internal Battery, 01AV489
 		"bat": "BAT0",
 		"states": {
+			"stable": 100,
 			"good": 90,
 			"warning": 35,
 			"critical": 15,
-			"empty": 5
+			"empty": 6
 		},
 		"format": "{icon} {capacity}%",
 		"format-not-charging": "{capacity}%",
