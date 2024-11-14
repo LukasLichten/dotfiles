@@ -76,6 +76,7 @@ Window Management:
 - `<Super>C`: Close focused window
 - `<Super>F`: Toggle Fullscreen window
 - `<Super>V`: Toggle Floating for focused window
+- `<Super>J`: Switch Split Direction (Toggle Split)
 - `<Super>M`: Opens/Closes Logout Prompt
 
 Launching:
@@ -91,6 +92,23 @@ Screenshot (hyprshot):
 
 ## Deploying this dotfiles repo
 I use `dotbare` to clone and update this repo
+
+## Other Advice/etc configs
+Set in `/usr/share/gvfs/mounts/network.mount` this to prevent thunar from locking up/unable to launch on unreachable filesystem:
+```
+AutoMount=false
+```
+  
+Doas user `/etc/doas.conf`:
+```
+permit persist :wheel
+```
+  
+Thurstmaster T-LCM pedalse to show up correctly create `/etc/udev/rules.d/71-simpedals.rules`:
+```
+SUBSYSTEMS=="input", ATTRS{id/product}=="b371", ATTRS{id/vendor}=="044f", ENV{ID_INPUT_JOYSTICK}="1", TAG+="uaccess"
+```
+  
 
 ## Licensing
 There are some images in `~/.config/hypr/lockscreen/` (consult the `credits.txt`) there, which are unlicensed.  
