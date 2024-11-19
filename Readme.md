@@ -22,6 +22,7 @@ Used by my Thinkpad and my Gaming PC. Contains configurations for Hyprland
  - Media/Brightness buttons are mapped
  - Highlight color is purple, no window rounding
 - `.bashrc` only extends the `PATH` to include `~/go/bin` for using go tools during development
+- Thunderbird Scriptable Notification script (to receive email notification without it taking over the desktop)
 
 ## Hyprland Install
 This is should be a mostly complete list of all software used:
@@ -50,7 +51,7 @@ thunar
 wofi
 wlogout
 hyprshot
-speecrunch
+speedcrunch
 ```
 
 From flatpak these apps are autolaunched:
@@ -62,6 +63,8 @@ org.telegram.desktop
 Additionally the config is setup to expect a config file in `~/.config/hypr/device-specific.conf`,
 used for configuring monitors and device specific env.  
 It is important that this file at minimum exist, hyprland will otherwise throw an error.
+  
+The hyprland config includes a hardcoded `$home` variable that you will likely need to change.
 
 ## Hyprland shotcuts
 Window Management:
@@ -109,6 +112,14 @@ Thurstmaster T-LCM pedalse to show up correctly create `/etc/udev/rules.d/71-sim
 SUBSYSTEMS=="input", ATTRS{id/product}=="b371", ATTRS{id/vendor}=="044f", ENV{ID_INPUT_JOYSTICK}="1", TAG+="uaccess"
 ```
   
+## Thunderbird
+Thunderbird uses it's own notification windows, 
+not great on a tiling window managers as they tile and rearrange the entire desktop.  
+  
+Solution is to use the Scriptable Notifications Add-On, 
+a script that converts new email into standard notifications for hyprnotify to handle is included.
+  
+You have to install the Add-on, then change the path in `~/.mozilla/native-messaging-hosts/scriptableNotifications.json`, as it includes a hardcoded home folder.
 
 ## Licensing
 There are some images in `~/.config/hypr/lockscreen/` (consult the `credits.txt`) there, which are unlicensed.  
