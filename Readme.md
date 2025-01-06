@@ -40,6 +40,7 @@ hyprpaper
 polkit-kde-agent
 hyprnotify
 network-manager-applet
+blueman
 waybar
 kdeconnect
 
