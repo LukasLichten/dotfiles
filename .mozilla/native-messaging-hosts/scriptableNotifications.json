@@ -1,7 +1,0 @@
-{
-    "name": "scriptableNotifications",
-    "description": "Scriptable Notifications - Native Script",
-    "path": "/home/Lukas/.mozilla/script-notifications.py",
-    "type": "stdio",
-    "allowed_extensions": [ "{271e72b1-166c-471b-bc06-41e03f176b15}" ]
-  }
