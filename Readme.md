@@ -21,6 +21,7 @@ Used by my Thinkpad and my Gaming PC. Contains configurations for Hyprland
  - Media/Brightness buttons are mapped
  - Highlight color is purple, no window rounding
 - `.bashrc` only extends the `PATH` to include `~/go/bin` for using go tools during development
+- `go-hass-agent` (a tool for Home Assistant) launched without tray icon
 
 ## Hyprland Install
 This is should be a mostly complete list of all software used:
@@ -41,6 +42,7 @@ network-manager-applet
 blueman
 waybar
 kdeconnect
+go-hass-agent-bin
 
 pamixer
 pavucontrol

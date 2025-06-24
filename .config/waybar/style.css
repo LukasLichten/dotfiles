@@ -44,7 +44,7 @@ window#waybar {
 }
 
 #workspaces button {
-	padding: 0 3px;
+	padding: 0 1px;
 	color: @theme-text-color;
 }
 #workspaces button.visible {
@@ -61,7 +61,7 @@ window#waybar {
 #workspaces button:hover {
 	background: #1a1a1a;
 	border: #1a1a1a;
-	padding: 0 3px;
+	padding: 0 1px;
 }
 
 #memory {
