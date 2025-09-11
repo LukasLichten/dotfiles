@@ -57,7 +57,7 @@ speedcrunch
 
 From flatpak these apps are autolaunched:
 ```
-dev.vencord.Vesktop
+com.discordapp.Discord
 org.telegram.desktop
 ```
 
@@ -94,6 +94,9 @@ Screenshot (hyprshot):
 - `Print`: current monitor
 - `<Super>Print`: focused window
 - `<Shift>Print`: mark region to screenshot
+
+Gestures:
+- `<3-Finger><Horizontal>` Changes Workspace
 
 ## Deploying this dotfiles repo
 I use `dotbare` to clone and update this repo
