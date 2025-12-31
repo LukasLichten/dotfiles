@@ -28,7 +28,7 @@
 	<name>Open In New Window</name>
 	<submenu></submenu>
 	<unique-id>1718887600628691-1</unique-id>
-	<command>hyprctl dispatch exec thunar %f</command>
+	<command>hyprctl dispatch exec thunar &apos;%f&apos;</command>
 	<description></description>
 	<range>*</range>
 	<patterns>*</patterns>
