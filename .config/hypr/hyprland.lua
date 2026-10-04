@@ -292,8 +292,8 @@ hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.move({ direction = "down" }))
 
 -- Modifies the splitratio 
-hl.bind(mainMod .. " + SHIFT + Page_Up",  hl.dsp.layout("splitratio +0.05"), { locked = true, repeating = true })
-hl.bind(mainMod .. " + SHIFT + Page_Down", hl.dsp.layout("splitratio -0.05"), { locked = true, repeating = true })
+hl.bind(mainMod .. " + SHIFT + Page_Up",  hl.dsp.layout("splitratio -0.05"), { locked = true, repeating = true })
+hl.bind(mainMod .. " + SHIFT + Page_Down", hl.dsp.layout("splitratio +0.05"), { locked = true, repeating = true })
 
 -- Workspace Actions
 for i = 1, 10 do
@@ -340,11 +340,25 @@ hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+")
 hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
 -- Screenshot a window
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m active -m window -o ~/Pictures/Screenshots"))
+local screenshotWindow = function ()
+	hl.dispatch(hl.dsp.exec_cmd("hyprshot -m active -m window -o ~/Pictures/Screenshots"))
+end
+
+hl.bind(mainMod .. " + PRINT", screenshotWindow)
+hl.bind(mainMod .. " + HOME", screenshotWindow)
 -- Screenshot a monitor
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m active -m output -o ~/Pictures/Screenshots"))
+local screenshotMonitor = function ()
+	hl.dispatch(hl.dsp.exec_cmd("hyprshot -m active -m output -o ~/Pictures/Screenshots"))
+end
+
+hl.bind("CTRL + PRINT", screenshotMonitor)
+hl.bind("CTRL + HOME", screenshotMonitor)
 -- Screenshot a region
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots"))
+local screenshotRegion = function ()
+	hl.dispatch(hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots"))
+end
+hl.bind("SHIFT + PRINT", screenshotRegion)
+hl.bind("SHIFT + HOME", screenshotRegion)
 
 ------------------------------
 --- WINDOWS AND WORKSPACES ---
